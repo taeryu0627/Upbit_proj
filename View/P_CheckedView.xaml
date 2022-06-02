@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Upbit_proj.View.P_CheckedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Upbit_proj.View"
+             mc:Ignorable="d" 
+             Height="1080" Width="1920">
+    <Grid>
+        <Grid Height="600" Width="800" Background="#3D3A35">
+            <Button Background="#1F2229" 
+                    Margin="0,180,0,0" Width="120" Height="50" FontSize="30" Foreground="White" Command="{Binding OkCommand}">
+                확인
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

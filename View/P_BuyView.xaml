@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Upbit_proj.View.P_BuyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Upbit_proj.View"
+             mc:Ignorable="d" 
+             Height="1080" Width="1920">
+    <Grid>
+        <Grid Height="600" Width="800" Background="#3D3A35">
+            <TextBlock Text="{Binding BitcoinName}" Foreground="#FFFFFF" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                       Margin="0,40,0,0" Width="500" Height="120" FontSize="40" />
+            <TextBlock Text="{Binding MarketPrice}" Foreground="#FFFFFF" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                       Margin="0,80,0,0" Width="450" Height="120" FontSize="30" />
+            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" >
+                <Button Margin="20,0,20,0" Height="50" Width="80" Content="10%" FontSize="20" Background="#1F2229" Foreground="#FFFFFF" Command="{Binding TenCommand}"/>
+                <Button Margin="20,0,20,0" Height="50" Width="80" Content="25%" FontSize="20" Background="#1F2229" Foreground="#FFFFFF" Command="{Binding QuarterCommand}"/>
+                <Button Margin="20,0,20,0" Height="50" Width="80" Content="50%" FontSize="20" Background="#1F2229" Foreground="#FFFFFF" Command="{Binding HalfCommand}" />
+                <Button Margin="20,0,20,0" Height="50" Width="80" Content="전액" FontSize="20" Background="#1F2229" Foreground="#FFFFFF" Command="{Binding AllCommand}"/>
+            </WrapPanel>
+            <!--<TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding SelectPrice}" TextChanged="textChangedEventHandler" 
+                     Width="450" Height="80" Margin="0,100,0,0" Background="#222E31" Foreground="White"
+                     TextAlignment="Left" Padding="20,20,20,20" FontSize="20"/>-->
+            <TextBox x:Name="Select" TextChanged="textChangedEventHandler" PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding SelectPrice, UpdateSourceTrigger=PropertyChanged}"
+                     Width="450" Height="80" Margin="0,0,0,200" Background="White" Foreground="#222E31"
+                     TextAlignment="Left" Padding="20,20,20,20" FontSize="20"/>
+            <TextBlock Text="{Binding Bitcoin}" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                       Margin="0,0,0,90" Width="450" Height="30" FontSize="10" TextAlignment="Right" />
+            <TextBox x:Name="Payment" TextChanged="textChangedEventHandler"  PreviewTextInput="TextBox_PreviewTextInput" 
+                     Text="{Binding PaymentPrice, UpdateSourceTrigger=PropertyChanged}"
+                     Width="450" Height="80" Margin="0,150,0,0" Background="#222E31" Foreground="White"
+                     TextAlignment="Left" Padding="20,20,20,20" FontSize="20"/>
+            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,300,0,0" >
+                <Grid>
+                    <Button Background="Gray" 
+                    Margin="0,0,200,0" Width="120" Height="50" FontSize="30" Foreground="White" Click="CancelBtn">
+                        취소
+                    </Button>
+                    <Button Background="#1F2229" 
+                    Margin="200,0,0,0" Width="120" Height="50" FontSize="30" Foreground="White" Command="{Binding OkCommand}">
+                        확인
+                    </Button>
+                </Grid>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</UserControl>
